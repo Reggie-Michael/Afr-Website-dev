@@ -1,9 +1,13 @@
-import React from 'react'
-
-const page = () => {
+'use client'
+ 
+import { useParams } from 'next/navigation'
+const Page = () => {
+  const params = useParams();
   return (
-    <div>page</div>
+    <div className='w-full text-center capitalize'>
+      <h1>{params.about}</h1>
+    </div>
   )
 }
 
-export default page
+export default Page
