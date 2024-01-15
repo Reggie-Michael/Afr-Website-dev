@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-// import GetPath from "@app/hooks/GetPath";
+import GetPath from "@app/hooks/GetPath";
 
 export default function Layout({ children }) {
   // const path = GetPath;

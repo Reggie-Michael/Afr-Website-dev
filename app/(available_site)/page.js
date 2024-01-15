@@ -192,21 +192,9 @@ export default function Home() {
   };
   return (
     <main className="app relative">
-      {/* <div className="animate_dot size-6 bg-white rounded-full absolute right-[31.5%]  animate-ping"></div>
+    
 
-      <div className="animate_dot1 size-6 bg-white rounded-full absolute right-[19.5%]  top-[50%] animate-ping delay-200"></div>
-
-      <div className="animate_dot2 size-6 bg-white rounded-full absolute left-[27.5%]  top-[30%] animate-ping delay-400"></div>
-
-      <div className="animate_dot3 size-6 bg-white rounded-full absolute right-[30.5%]  top-[30%] animate-ping delay-400"></div>
-
-      <div className="animate_dot4 size-6 bg-white rounded-full absolute left-[9.5%]  top-[80%] animate-ping z-20 delay-600"></div>
-
-      <div className="animate_dot5 size-6 bg-white rounded-full absolute right-[0.5%]  top-[60%] animate-ping z-20 delay-800"></div>
-
-      <div className="animate_dot6 size-6 bg-white rounded-full absolute left-[0.5%]  top-[-30%] animate-ping z-20 delay-800"></div> */}
-
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}>
         <Landing
           contentClass={landingData.contentClass.join(" ")}
           paneOne=<>{landingData.paneOne}</>
@@ -226,7 +214,7 @@ export default function Home() {
             <FontAwesomeIcon icon={faInstagram}/>
           </Link>
         </div>
-      </Suspense>
+      </Suspense> */}
       </main>
   );
 }
