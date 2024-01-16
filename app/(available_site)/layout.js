@@ -2,14 +2,14 @@ import Navbar from "@/components/Navbar";
 import GetPath from "@app/hooks/GetPath";
 
 export default function Layout({ children }) {
-  // const path = GetPath;
-  
+  "use client";
+
   return (
-    <section className="overflow-x-clip pt-12">
-      <div className="before"></div>
-      <div className="before2"></div>
-      <Navbar />
-      {children}
-    </section>
+    <GetPath>
+      <section className={"gap-14 main-wrap"}>
+        <Navbar />
+        {children}
+      </section>
+    </GetPath>
   );
 }

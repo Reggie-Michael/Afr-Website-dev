@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const Landing = ({contentClass, paneOne, paneTwo, paneTwoContent }) => {
   return (
-    <div className={contentClass && contentClass + "landingContent"}>
+    <div className={`landingContent ${contentClass} `}>
         <>{paneOne}</>
         {paneTwo && <>{paneTwoContent}</>}
       </div>

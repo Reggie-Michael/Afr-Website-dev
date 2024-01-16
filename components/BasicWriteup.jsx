@@ -17,7 +17,6 @@ const BasicWriteup = ({
       {heading ? <h1 className={headingClass + " mb-2"}>{headingText}</h1> : <h2 className={headingClass + " mb-1"}>{headingText}</h2>}
       {desc && <p className={descClass}>{descText}</p>}
       <div className="button flex gap-4">
-        {" "}
         {buttonOne && <button className={buttonOneClass}>{buttonOneText}</button>}
         {buttonTwo && <button className={buttonTwoClass}>{buttonTwoText}</button>}
       </div>
