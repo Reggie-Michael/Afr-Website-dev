@@ -1,5 +1,6 @@
 import React from "react";
 import appIcons from "../public/assets/icons/manifest.json";
+import { v4 as uuidv4 } from "uuid";
 
 const MetaLink = () => {
   return (
@@ -7,7 +8,7 @@ const MetaLink = () => {
       {/* Loop through the icons array and create <link> elements */}
       {appIcons.icons.map((icon, index) => (
         <link
-          key={index}
+          key={`${index.padStart(3, 0)} ${uuidv4()}`}
           rel="icon"
           type={icon.type}
           sizes={icon.sizes}

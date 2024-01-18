@@ -23,11 +23,10 @@ const GetPath = ({ children }) => {
 
   const [path, setPath] = useState("");
 
-  console.log("Current Path:", path);
 
   return (
     <section className={path}>
-      {console.log("Current Path:", path)}
+      {/* {console.log("Current Path:", path)} */}
       {children}
     </section>
   );

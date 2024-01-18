@@ -1,218 +1,28 @@
 "use client";
-import BasicWriteup from "@components/BasicWriteup";
+// import "{***}" from homeDa
 import Landing from "@components/Landing";
 // for other content except landing
-import BasicLayout from "@components/Landing";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faXTwitter,
-  faFacebook,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
 import { Suspense } from "react";
 import Loading from "@app/loading";
+import Image from "next/image";
 import Link from "next/link";
-import BlueButton from "@components/BlueButton";
 import Partners from "@components/Partners";
-import { TwinButton } from "@components/HomeComponent";
+import { ServicesCard, TwinButton } from "@components/HomeComponent";
+import {
+  landingData,
+  landingDataSv,
+  twinButtonIconData,
+  ourServicesData,
+  testimonialWriteUpData,
+} from "@app/data/homeData";
+import BasicWriteup from "@components/BasicWriteup";
+import TestimonialCardMini from "@components/TestimonialCardMini";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Home() {
-  const writeUpData = {
-    headingClass: [
-      "text-transparent",
-      "text-[76px]",
-      "font-semibold",
-      "font-montserrat",
-      "leading-[92px]",
-      "heading_gradient",
-    ],
-    headingText: (
-      <>
-        Building the <br />
-        Future with Tech.
-      </>
-    ),
-    descClass: [
-      "text-white",
-      "text-opacity-75",
-      "text-xl",
-      "font-medium",
-      "font-montserrat",
-      "leading-[34px]",
-    ],
-    descText: (
-      <>
-        Afripul group is a company founded under the passion for a better
-        Africa. At Afripul group, we create, brand and market
-      </>
-    ),
-    buttonOneClass: [
-      "w-[239px] h-[70px] bg-gradient-to-r from-green-600 to-emerald-500 rounded-[43px] hover:opacity-90 hover:ring-2  hover:ring-green-400 hover:to-green-700 hover:from-emerald-500",
-      " text-white text-2xl font-medium font-poppins",
-    ],
-    buttonOneText: "Contact us",
-    buttonTwoClass: [
-      "w-[239px] h-[70px] bg-none flex items-center gap-3  hover:text-opacity-70 hover:ring-2 hover:ring-green-400 rounded-[43px] px-2 hover:bg-emerald-400 hover:bg-opacity-50 group",
-      " text-white text-xl font-medium font-poppins",
-    ],
-    buttonTwoText: (
-      <>
-        <div className="w-[52px] h-[52px] bg-gray-900 rounded-[86px] border-2 border-slate-500 backdrop-blur-[18px] flex items-center justify-center group-hover:bg-transparent">
-          <Image
-            src={"/assets/images/polygon 1.svg"}
-            width={10}
-            height={10}
-            alt="play icon"
-            className="object-contain size-2/5 object-right"
-          />
-        </div>
-        <div className="text-white text-xl font-medium">Watch Video</div>
-      </>
-    ),
-  };
-
-  const landingData = {
-    contentClass: [
-      "flex h-[90%] px-[5%] gap-5 box-border home_landing mt-14 mb-10",
-    ],
-    paneOne: (
-      <>
-        <div className="w-[782px] h-full bg-gradient-to-b from-sky-400 to-sky-500 rounded-[32px] shadow-inner perspective">
-          <Image
-            src={"/assets/images/sphere.svg"}
-            width={964}
-            height={964}
-            alt="Sphere"
-            className="object-contain  object-center rotate_3d backface-hidden"
-          />
-        </div>
-      </>
-    ),
-    paneTwo: true,
-    paneTwoContent: (
-      <>
-        <div className="flex flex-col w-[60%] justify-around bg-neutral-800 rounded-[32px] border-2 border-white border-opacity-10 py-5 px-12 relative">
-          <h1 className=" text-white text-[95px] font-bold font-inter m-0">
-            Building the future with-technology <br />
-            {"(<{...}>)"}
-          </h1>
-          <hr className="border-white border-opacity-20" />
-          <div className="flex justify-between items-center">
-            <BlueButton content={"Start Building +"} className={"font-inter"} />
-            <div className="text-white text-xl font-medium font-poppins flex gap-1 items-center">
-              <Image
-                src={"/assets/images/ic_outline-gpp-good.svg"}
-                width={36}
-                height={36}
-                alt="guaranteed icon"
-                // className="object-contain object-right"
-              />
-              Impossibility does not exist.
-            </div>
-          </div>
-          <div className="absolute right-[7%] top-[43%]">
-            <Image
-              src={"/assets/images/video-camera-dynamic-03 2.svg"}
-              width={258}
-              height={258}
-              alt="colored camera icon"
-              // className="object-contain object-right"
-            />
-          </div>
-        </div>
-      </>
-    ),
-  };
-
-  const basicLayoutSv_1 = {
-    contentClass: [
-      "flex p-[4%] bg-neutral-800 w-[1100px] font-inter rounded-[32px] relative",
-    ],
-    paneOne: (
-      <>
-        <div className="w-[65%]">
-          <BasicWriteup
-            heading={false}
-            headingClass={"text-[50px] font-bold leading-[54px]"}
-            headingText="Building the future with-technology"
-            desc={true}
-            descClass={"text-xl font-medium leading-normal"}
-            descText={`Lorem ipsum dolor sit amet consectetur.
-                Viverra ipsum ut at semper purus urna 
-                molestie in. Nisi enim volutpat id integer enim in..
-              `}
-            buttonOne={false}
-            buttonTwo={false}
-          />
-        </div>
-        <div className="absolute right-2 bottom-0">
-          <Image
-            src={"/assets/images/thumb-up-dynamic-color.svg"}
-            width={306}
-            height={356}
-            alt="guaranteed icon"
-            // className="object-contain object-right"
-          />
-        </div>
-      </>
-    ),
-  };
-
-  const landingDataSv = {
-    contentClass: ["flex px-[5%] gap-5 box-border mt-14 mb-10"],
-    paneOne: (
-      <>
-        <BasicLayout
-          contentClass={basicLayoutSv_1.contentClass.join(" ")}
-          paneOne=<>{basicLayoutSv_1.paneOne}</>
-          paneTwo={false}
-        />
-      </>
-    ),
-    paneTwo: (
-      <>
-        <div className="w-[45%] h-[454px] bg-gradient-to-l from-cyan-900 to-slate-800 rounded-[32px] border-2 border-sky-700 font-inter p-[3%] flex flex-col gap-5">
-          <div className="text-base font-medium leading-none">
-            Our works are
-          </div>
-          <div className="flex max-h-[80%]">
-            <h2 className="text-[85px] font-normal leading-[90px]">
-              High <br />
-              <span className="bg-gradient-to-[76deg] box-decoration-clone from-[#096396] from-[13.64%] via-[#73D5DB] via-[46.53%] to-[#5A429C] to-[78.88%] font-bold bg-clip-text bg_clip_text">
-                Quality <br />
-                Render
-              </span>
-            </h2>
-            <div className="flex items-center justify-center overflow-clip ">
-              <Image
-                src={"/assets/images/Lightning.svg"}
-                width={356}
-                height={356}
-                alt="glowed Lightning"
-                className="object-cover object-[70%_bottom] size-[450px] lightening"
-              />
-            </div>
-          </div>
-          <div className="text-xl font-medium leading-tight">
-            Lorem ipsum dolor sit amet consectetur +
-          </div>
-        </div>
-      </>
-    ),
-  };
-  const twinButtonIconData = {
-    services: {
-      path: "Rocket",
-      alt: "rocket icon",
-      width: "86",
-      height: "86",
-      className:
-        "-right-[40%] -top-[55%] object-center object-contain",
-    },
-  };
   return (
     <main className="app relative">
+      {/* Landing Page  */}
       <div className="landing-page flex flex-col box-border">
         <div className="fv h-[710px]">
           <Suspense fallback={<Loading />}>
@@ -235,6 +45,7 @@ export default function Home() {
           </Suspense>
         </div>
       </div>
+      {/* Our Partners  */}
       <div className="partners w-full flex flex-col gap-12 my-24 items-center px-[5%]">
         <Suspense fallback={<Loading />}>
           <p className="text-center text-white text-opacity-80 text-xl font-medium font-montserrat leading-[34px] w-[30%]">
@@ -243,6 +54,7 @@ export default function Home() {
           <Partners />
         </Suspense>
       </div>
+      {/* Inputted Text  */}
       <div className="flex gap-7 font-inter px-[5%] my-36">
         <Suspense fallback={<Loading />}>
           <div className="w-3/5  text-[40px] font-bold leading-[50px]">
@@ -265,7 +77,7 @@ export default function Home() {
                 buttonOneClass={
                   "size-[85px] bg-sky-500 rounded-full flex items-center justify-center group-hover:brightness-125 overflow-clip relative"
                 }
-                buttonOneBody={twinButtonIconData.services}
+                buttonOneBody={twinButtonIconData.redirect}
                 buttonTwo={false}
                 buttonTwoClass={
                   "size-[85px] rounded-full border-2 border-white text-3xl cursor-pointer hover:opacity-75 hover:shadow hover:shadow-white hover:border-opacity-60"
@@ -275,6 +87,105 @@ export default function Home() {
             </div>
           </div>
         </Suspense>
+      </div>
+      {/* Our Services  */}
+      <div className="px-[5%] my-28 flex flex-col relative overflow-x-clip">
+        <Suspense fallback={<Loading />}>
+          {/* Styling  */}
+          <div className="w-full flex -mb-2 bg-transparent ">
+            {/* <div className="before w-[30%] h-[200px] bg-[#202020] border-b-[200px] border-b-[#202020] border-r-[100px] border-r-[#0d1013] rounded-tl-3xl rounded-tr-[150px] rounded-br-[20px]"></div> */}
+            <div className="relative w-[30%]  bg-[#202020] h-[120px]  rounded-tl-3xl rounded-tr-2xl border-white border-[2px] border-opacity-10 border-r-0 mb-1 border-b-0  ">
+              <div className="absolute w-[120%] h-full left-[15px] -top-0.5 bg-[#202020] rounded-t-3xl skew-x-[20deg] border-white border-[2px] border-opacity-10 border-l-0 border-b-0 "></div>
+            </div>
+          </div>
+          {/* ...Content  */}
+          <div className="w-full  bg-[#202020] flex flex-col rounded-b-3xl rounded-tr-3xl  pb-[5rem] z-10 gap-24 border-white border-[2px] border-opacity-10">
+            <div className="flex justify-between items-start -mt-12 pr-[5%]">
+              <div className="w-[40.25%] pl-[5%] bg-[#202020] overflow-x-clip rounded-tr-[4rem]">
+                <h2 className="text-[86px] w-[110%] rounded-tr-3xl font-bold font-inter leading-[90px] backdrop-opacity-5 bg-[#202020]">
+                  Our <br />
+                  Services.
+                </h2>
+              </div>
+              <div className="self-end group ">
+                <TwinButton
+                  button={false}
+                  buttonOneClass={
+                    "size-[106px] bg-sky-500 rounded-full flex items-center justify-center group-hover:opacity-85 hover:opacity-95 relative"
+                  }
+                  buttonOneBody={twinButtonIconData.ourServices}
+                  buttonTwo={false}
+                  buttonTwoClass={
+                    "size-[106px] rounded-full bg-yellow-400 -ml-4 z-[1] text-[#0A6597] text-3xl cursor-pointer hover:opacity-75"
+                  }
+                  buttonTwoPath="/services"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-5 w-full px-[4%]">
+              {ourServicesData.map((service, index) => (
+                <ServicesCard
+                  key={`HomeServiceData_${uuidv4()}_${index}`}
+                  icon={service.icon}
+                  {...service}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="absolute -bottom-[15%] -right-4 z-30">
+            <Image
+              src="/assets/images/bulb.svg"
+              width={404}
+              height={404}
+              alt={"Bulb? Icon"}
+              className=" delay-0 rotate-0 animate-bulb"
+            />
+          </div>
+        </Suspense>
+      </div>
+      {/* Testimonials */}
+      <div className="flex mt-56 mb-28 overflow-x-clip">
+        <div className="flex w-fit gap-5 ">
+          <Suspense fallback={<Loading />}>
+            <div className="w-[600px] pl-[7.5%] pr-[5%]">
+              <BasicWriteup
+                heading={false}
+                headingClass={testimonialWriteUpData.leftPane.headingClass.join(
+                  " "
+                )}
+                headingText=<>{testimonialWriteUpData.leftPane.headingText}</>
+                desc={true}
+                descClass={testimonialWriteUpData.leftPane.descClass.join(" ")}
+                descText=<>{testimonialWriteUpData.leftPane.descText}</>
+                buttonOne={true}
+                buttonOneClass={testimonialWriteUpData.leftPane.buttonOneClass.join(
+                  " "
+                )}
+                buttonOneProps={testimonialWriteUpData.leftPane.buttonOneProps}
+                buttonOneText=<>
+                  {testimonialWriteUpData.leftPane.buttonOneText}
+                </>
+                buttonTwo={true}
+                buttonTwoClass={testimonialWriteUpData.leftPane.buttonTwoClass.join(
+                  " "
+                )}
+                buttonTwoProps={testimonialWriteUpData.leftPane.buttonTwoProps}
+                buttonTwoText=<>
+                  {testimonialWriteUpData.leftPane.buttonTwoText}
+                </>
+              />
+            </div>
+            <div className="flex gap-5">
+              {testimonialWriteUpData.card.map((testimonial, index) => (
+                <TestimonialCardMini
+                  key={`HomeTestimonialCard_${uuidv4()}_${index}`}
+                  rating="3.5"
+                  img={testimonial.img}
+                />
+              ))}
+            </div>
+          </Suspense>
+        </div>
       </div>
       {/* 
       <Suspense fallback={<p>Loading Links</p>}>
@@ -290,6 +201,7 @@ export default function Home() {
           </Link>
         </div>
       </Suspense> */}
+      <script src="/app .js"></script>
     </main>
   );
 }

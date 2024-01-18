@@ -17,6 +17,9 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
         "public-sans": ["Public Sans", "sans-serif"],
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
     },
   },
   plugins: [],

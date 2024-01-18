@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const Partners = () => {
   const partnersData = [
@@ -39,7 +40,8 @@ const Partners = () => {
   return (
     <div className="w-full gap-3 grid grid-cols-8 place-items-center">
       {partnersData.map((item) => (
-        <div className="partner-image-container" key={item.alt}>
+
+        <div className="partner-image-container" key={`${item.alt} ${uuidv4()}`}>
           <PartnerImage {...item} className={"size-[80%]"} />
         </div>
       ))}

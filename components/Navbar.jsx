@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import BlueButton from "./BlueButton";
+import { v4 as uuidv4 } from "uuid";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -60,10 +61,10 @@ const Navbar = () => {
       <nav className="flex text-white w-full items-center font-inter justify-between">
         <ul className="flex gap-7 items-center">
           {navigationItems.map((item) => (
-            <NavLink key={item.path} {...item} />
+            <NavLink key={`${item.path} ${uuidv4()}`} {...item} />
           ))}
         </ul>
-        <BlueButton content={"Start Building +"}/>
+        <BlueButton key={`NavBB_${uuidv4()}`} content={"Start Building +"}/>
       </nav>
     </header>
   );

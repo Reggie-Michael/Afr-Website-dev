@@ -20,7 +20,7 @@
 }
 
 body {
-  background: #0d1013;
+  background: #0e0e0e;
   color: #fff;
 }
 
@@ -72,6 +72,8 @@ section {
   animation: animateBlend 5s linear infinite alternate;
 }
 
+
+
 @keyframes animateBlend {
  
   
@@ -84,22 +86,50 @@ section {
 
   0% {
     rotate: 360deg;
-    transform: rotateX(0deg)rotateY(0deg);
+    /* transform: rotateX(0deg)rotateY(0deg); */
 
   }
 
   100% {
     rotate: 360deg;
-    transform: rotateX(360deg) rotateY(360deg);
+    /* transform: rotateX(360deg) rotateY(360deg); */
   }
 }
 
+
+.animate-bulb {
+animation: spin2 5s 0s infinite;
+} 
+
+@keyframes spin2 {
+ 
+  to {
+    rotate: 360deg;
+
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotateAnimation {
+  animation: rotate 2s linear infinite;  /*You can adjust the animation duration */
+}
 
 
 /* Main Loading Screen */
 
 .loading_screen {
-  background: url("/assets/images/AFRIPUL GROUP.png") no-repeat center;
+  background: url("/assets/images/AFRIPUL GROUP.png") no-repeat;
+  background-position: left center;
   background-blend-mode: multiply;
   background-size: 97%;
 }
+
