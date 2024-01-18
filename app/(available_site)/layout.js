@@ -1,15 +1,22 @@
 import Navbar from "@/components/Navbar";
 import GetPath from "@app/hooks/GetPath";
+import Loading from "@app/loading";
+// import Script from "next/script";
+import { Suspense } from "react";
 
 export default function Layout({ children }) {
-  "use client";
+console.log("ready");
 
   return (
-    <GetPath>
-      <section className={"gap-14 main-wrap"}>
-        <Navbar />
-        {children}
-      </section>
-    </GetPath>
+    <Suspense fallback={<Loading />}>
+      <GetPath>
+        <section className={"gap-14 main-wrap"}>
+          <Navbar />
+          {children}
+        </section>
+        
+        
+      </GetPath>
+    </Suspense>
   );
 }

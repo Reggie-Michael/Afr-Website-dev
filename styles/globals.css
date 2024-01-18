@@ -1,5 +1,5 @@
-/* Fonts: Poppins and Montserrat from google fonts  */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* Fonts: Poppins and Montserrat from google fonts  */
 
 @tailwind base;
 @tailwind components;
@@ -63,8 +63,8 @@ section {
 
 .bg_clip_text {
   background: linear-gradient(76deg, #096396 13.64%, #73D5DB 46.53%, #5A429C 78.88%);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -72,11 +72,22 @@ section {
   animation: animateBlend 5s linear infinite alternate;
 }
 
+.scroll_hidden {
+  overflow: hidden;
+  clip-path: inset(0 13px 0 0);
+  /* scale: 101%; */
+  align-self: right;
+  
+}
 
+.clip_box {
+  clip-path: inset(135px 0 135px 0);
+
+}
 
 @keyframes animateBlend {
- 
-  
+
+
   50% {
     @apply mix-blend-screen;
   }
@@ -98,11 +109,11 @@ section {
 
 
 .animate-bulb {
-animation: spin2 5s 0s infinite;
-} 
+  animation: spin2 5s 0s infinite;
+}
 
 @keyframes spin2 {
- 
+
   to {
     rotate: 360deg;
 
@@ -114,13 +125,15 @@ animation: spin2 5s 0s infinite;
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 .rotateAnimation {
-  animation: rotate 2s linear infinite;  /*You can adjust the animation duration */
+  animation: rotate 2s linear infinite;
+  /*You can adjust the animation duration */
 }
 
 
@@ -132,4 +145,3 @@ animation: spin2 5s 0s infinite;
   background-blend-mode: multiply;
   background-size: 97%;
 }
-

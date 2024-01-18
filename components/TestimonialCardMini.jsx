@@ -2,13 +2,12 @@
 import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 
 const TestimonialCardMini = ({ rating, text, name, date, img }) => {
   const uniqueKey = "Star " + uuidv4();
-
+  // console.log(uniqueKey);
   const RatingComponent = () => {
     // Convert rating to string and remove leading/trailing spaces
     const ratingStringified = rating.toString().trim();
@@ -68,13 +67,15 @@ const TestimonialCardMini = ({ rating, text, name, date, img }) => {
         key={`${uniqueKey}_${ratingInteger + index}`}
         icon={farStar}
         alt={"angle left icon"}
-        className={`text-[#FDEEBE] oneOff${ratingInteger + (index + 1)}`}
+        className={`text-[#FDEEBE] oneOff${
+          ratingInteger + ratingLeft() + (index + 1)
+        }`}
       />
     ));
 
     // Return the JSX representing the entire rating component
     return (
-      <div className="text-xl gap-1.5 flex">
+      <div className="text-xl gap-1.5 flex testimonialRating">
         {fullStar}
         {halfStar}
         {emptyStar}
@@ -83,9 +84,9 @@ const TestimonialCardMini = ({ rating, text, name, date, img }) => {
   };
 
   return (
-    <div className="p-10 flex flex-col w-[470.95px] h-[400px] bg-gradient-to-tr from-[#20202064] to-[#2f2f2f51] rounded-xl border-2 border-white border-opacity-10 backdrop-blur-[18px]">
-      <div className="flex flex-col gap-5 h-[80%]">
-        <RatingComponent  />
+    <div className="p-10 flex flex-col w-[470.95px] h-[400px] gap-2 bg-gradient-to-tr from-[#20202064] to-[#2f2f2f51] rounded-xl border-2 border-white border-opacity-10 backdrop-blur-[18px]">
+      <div className="flex flex-col gap-5 flex-grow">
+        <RatingComponent key={`StarCon_${uuidv4()}`} />
         <div className=" text-slate-50 text-base font-normal font-public-sans leading-normal">
           {text ||
             `I was ready to delete my account, but the customer service team
@@ -93,7 +94,7 @@ const TestimonialCardMini = ({ rating, text, name, date, img }) => {
           chance and now I'm having a much better experience on the platform.`}
         </div>
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-3 ">
         <div className="flex hover:opacity-85">
           <Image
             src={img.src}
@@ -102,26 +103,28 @@ const TestimonialCardMini = ({ rating, text, name, date, img }) => {
             height={img.height}
             className={img.className}
           />
-          <div className="flex-col gap-2">
-            <h4 className="text-slate-50 text-base font-semibold font-public-sans leading-normal">
-              {name || "Ralph Edwards"}
-            </h4>
-            <div className="text-slate-400 text-sm font-normal font-public-sans leading-tight">
-              {date || "April 22, 2022"}
-            </div>
+        </div>
+        <div className="flex flex-col h-full justify-between">
+          <h4 className="text-slate-50 text-base font-semibold font-public-sans m-0">
+            {name || "Ralph Edwards"}
+          </h4>
+          <div className="text-slate-400 text-sm font-normal font-public-sans leading-tight">
+            {date || "April 22, 2022"}
           </div>
-          <div className="flex gap-2">
+        </div>
+        <div className="flex gap-2 pt-1">
+          <div className="flex items-start ">
             <Image
               src="/assets/images/Verified Icon.svg"
               alt="Verified Icon"
               width={16}
               height={16}
-              className=""
+              className="object-bottom"
             />
-            <p className="text-slate-400 text-sm font-normal font-public-sans leading-tight">
-              Verified Customer
-            </p>
           </div>
+          <p className="text-slate-400 text-sm font-normal font-public-sans leading-tight">
+            Verified Customer
+          </p>
         </div>
       </div>
     </div>

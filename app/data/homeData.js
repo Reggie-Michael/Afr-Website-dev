@@ -8,7 +8,6 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { v4 as uuidv4 } from "uuid";
 
-
 const writeUpData = {
   headingClass: [
     "text-transparent",
@@ -296,6 +295,7 @@ export const testimonialWriteUpData = {
     ],
     buttonOneProps: {
       title: "Prev",
+      type: "button",
     },
     buttonOneText: (
       <>
@@ -313,6 +313,7 @@ export const testimonialWriteUpData = {
     ],
     buttonTwoProps: {
       title: "Next",
+      type: "button",
     },
     buttonTwoText: (
       <>
@@ -332,6 +333,7 @@ export const testimonialWriteUpData = {
         alt: "Customer Ralph",
         width: 40,
         height: 40,
+        className: "size-[50px]",
       },
     },
     {
@@ -340,6 +342,7 @@ export const testimonialWriteUpData = {
         alt: "Customer Ralph",
         width: 40,
         height: 40,
+        className: "size-[50px]",
       },
     },
     {
@@ -348,7 +351,103 @@ export const testimonialWriteUpData = {
         alt: "Customer Ralph",
         width: 40,
         height: 40,
+        className: "size-[50px]",
       },
     },
   ],
 };
+
+export const worksData = {
+  mainClass: "ml-0.5 h-full gap-7 ",
+  data: [
+    {
+      leftPane: {
+        category: "Branding",
+        headingClass: [
+          "text-[50px]",
+          "font-bold",
+          "font-inter",
+          "leading-[48px]",
+        ],
+        headingText: "{ Web Design & Development }",
+        descClass: [
+          "text-xl text-white test-opacity-80",
+          "font-medium",
+          "font-inter",
+          "leading-7 h-[70%]",
+        ],
+        descText: (
+          <>
+            Lorem ipsum dolor sit amet consectetur. A ut risus habitant morbi
+            tellus massa. Viverra ornare tortor dictum integer elementum laoreet
+            proin amet.
+          </>
+        ),
+        buttonOneClass: [
+          "size-[65px] rounded-full border-2 border-white hover:shadow hover:shadow-white hover:border-opacity-60 hover:text-xl",
+          "text-white text-2xl font-medium font-inter mt-5",
+        ],
+        buttonOneProps: {
+          title: "Prev",
+          type: "button",
+        },
+        buttonOneText: (
+          <>
+            <FontAwesomeIcon
+              icon={faAngleLeft}
+              alt={"angle left icon"}
+              className=""
+              title="Prev"
+            />
+          </>
+        ),
+        buttonTwoClass: [
+          "size-[65px] rounded-full border-2 border-white mt-5",
+          "text-white text-2xl font-medium font-inter hover:shadow hover:shadow-white hover:border-opacity-60 hover:text-xl",
+        ],
+        buttonTwoProps: {
+          title: "Next",
+          type: "button",
+        },
+        buttonTwoText: (
+          <>
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              alt={"angle right icon"}
+              className=""
+              title="Next"
+            />
+          </>
+        ),
+      },
+      rightPane: (
+        <>
+          <iframe
+            src="https://tailwindcss.com"
+            title="Woreber Website by Afripul Group"
+            className=" bg-slate-400 bg-opacity-10 size-full scroll_hidden rounded-3xl "
+          ></iframe>
+        </>
+      ),
+    },
+  ],
+};
+
+export const yesUsData ={
+  headingIcon: {
+    first: {
+      path: "Heart Ballon",
+      alt: "Heart Ballon icon",
+      width: 97,
+      height: 97,
+      className: "object-center object-cover size-[140px] group-hover:scale-105",
+    },
+    second: {
+      path: "UFO",
+      alt: "UFO icon",
+      width: 87,
+      height: 87,
+      className: "object-center object-cover size-[120px] group-hover:scale-105",
+    },
+  }
+}

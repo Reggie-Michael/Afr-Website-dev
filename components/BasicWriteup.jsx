@@ -16,7 +16,7 @@ const BasicWriteup = ({
   buttonTwoText,
 }) => {
   return (
-    <div className={mainClass + " flex flex-col gap-10"}>
+    <div className={`flex flex-col gap-10 ${mainClass && mainClass}`}>
       {heading ? <h1 className={headingClass + " mb-2"}>{headingText}</h1> : <h2 className={headingClass + " mb-1"}>{headingText}</h2>}
       {desc && <p className={descClass}>{descText}</p>}
       <div className="button flex gap-4">

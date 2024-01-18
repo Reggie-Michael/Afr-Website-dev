@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
+import { faArrowUp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import BasicWriteup from "./BasicWriteup";
 
 export const HomeComponent = () => {
   return <div>HomeComponent</div>;
@@ -20,6 +21,7 @@ export const TwinButton = ({
   buttonTwo,
   buttonTwoClass,
   buttonTwoPath,
+  buttonTwoBody,
 }) => {
   const [isButtonTwoHovered, setIsButtonTwoHovered] = useState(false);
 
@@ -49,33 +51,33 @@ export const TwinButton = ({
     <div className="flex">
       {button ? (
         <button key={`TwinButtonButton_${uuidv4()}`} className={buttonOneClass}>
-          <PlaceIcon
-            key={`TwinButtonIcon_${uuidv4()}`}
-            {...buttonOneBody}
-          />
+          <PlaceIcon key={`TwinButtonIcon_${uuidv4()}`} {...buttonOneBody} />
         </button>
       ) : (
         <div className={`${buttonOneClass}`}>
-          <PlaceIcon
-            key={`TwinButtonIcon_${uuidv4()}`}
-            {...buttonOneBody}
-          />
+          <PlaceIcon key={`TwinButtonIcon_${uuidv4()}`} {...buttonOneBody} />
         </div>
       )}
       {buttonTwo ? (
-        <button
-          key={`TwinButtonButton_${uuidv4()}`}
-          className={`flex items-center justify-center ${buttonTwoClass}`}
-          onMouseEnter={handleButtonTwoHover}
-          onMouseLeave={handleButtonTwoLeave}
-        >
-          <FontAwesomeIcon
-            key={`TwinButtonIcon_${uuidv4()}`}
-            icon={faArrowRight}
-            alt={"arrow up rotated"}
-            className="-rotate-45"
-          />
-        </button>
+        buttonTwoPath !== "0" ? (
+          <button
+            key={`TwinButtonButton_${uuidv4()}`}
+            className={`flex items-center justify-center ${buttonTwoClass}`}
+            onMouseEnter={handleButtonTwoHover}
+            onMouseLeave={handleButtonTwoLeave}
+          >
+            <FontAwesomeIcon
+              key={`TwinButtonIcon_${uuidv4()}`}
+              icon={faArrowRight}
+              alt={"arrow up rotated"}
+              className="-rotate-45"
+            />
+          </button>
+        ) : (
+          <div className={`flex items-center justify-center ${buttonTwoClass}`}>
+            <PlaceIcon key={`TwinButtonIcon2_${uuidv4()}`} {...buttonTwoBody} />
+          </div>
+        )
       ) : (
         <Link
           key={`TwinButtonLink_${uuidv4()}`}
@@ -110,6 +112,7 @@ TwinButton.propTypes = {
   buttonTwoClass: PropTypes.string,
   buttonTwoPath: PropTypes.string,
 };
+// **Twin Button End** //
 
 export const ServicesCard = ({ heading, desc, icon, path }) => {
   const { buttonOneClass, buttonOneBody } = icon;
@@ -155,4 +158,38 @@ ServicesCard.propTypes = {
     }),
   }),
 };
-// **Twin Button End** //
+
+export const PortfolioCard = ({ mainClass, works, index }) => {
+  return (
+    <div className="wrap size-full flex justify-between">
+      <div className="w-[40%] p-[5%] h-full gap-9 flex flex-col justify-between">
+        <h4 className="text-[#838383] text-xl font-normal font-['Inter'] leading-[34px] tracking-[6.50px] uppercase">
+          {works.leftPane.category}
+        </h4>
+        <BasicWriteup
+          key={`PortfolioWork_${uuidv4()}_${index}`}
+          mainClass={mainClass}
+          heading={false}
+          headingClass={works.leftPane.headingClass.join(" ")}
+          headingText={<>{works.leftPane.headingText}</>}
+          desc={true}
+          descClass={works.leftPane.descClass.join(" ")}
+          descText={<>{works.leftPane.descText}</>}
+          buttonOne={true}
+          buttonOneClass={works.leftPane.buttonOneClass.join(" ")}
+          buttonOneProps={works.leftPane.buttonOneProps}
+          buttonOneText={<>{works.leftPane.buttonOneText}</>}
+          buttonTwo={true}
+          buttonTwoClass={works.leftPane.buttonTwoClass.join(" ")}
+          buttonTwoProps={works.leftPane.buttonTwoProps}
+          buttonTwoText={<>{works.leftPane.buttonTwoText}</>}
+        />
+      </div>
+      <div className="flex wrap h-full w-[56%] rounded-3xl overflow-hidden relative">
+        <div className="flex size-full gap-14 rounded-3xl border-[1px] border-opacity-10 border-white ml-4 absolute">
+          <Suspense fallback={"Loading..."}>{works.rightPane}</Suspense>
+        </div>
+      </div>
+    </div>
+  );
+};

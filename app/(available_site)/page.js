@@ -7,17 +7,24 @@ import Loading from "@app/loading";
 import Image from "next/image";
 import Link from "next/link";
 import Partners from "@components/Partners";
-import { ServicesCard, TwinButton } from "@components/HomeComponent";
+import {
+  PortfolioCard,
+  ServicesCard,
+  TwinButton,
+} from "@components/HomeComponent";
 import {
   landingData,
   landingDataSv,
   twinButtonIconData,
   ourServicesData,
   testimonialWriteUpData,
+  worksData,
+  yesUsData,
 } from "@app/data/homeData";
 import BasicWriteup from "@components/BasicWriteup";
 import TestimonialCardMini from "@components/TestimonialCardMini";
 import { v4 as uuidv4 } from "uuid";
+import Script from "next/script";
 
 export default function Home() {
   return (
@@ -116,7 +123,7 @@ export default function Home() {
                   buttonOneBody={twinButtonIconData.ourServices}
                   buttonTwo={false}
                   buttonTwoClass={
-                    "size-[106px] rounded-full bg-yellow-400 -ml-4 z-[1] text-[#0A6597] text-3xl cursor-pointer hover:opacity-75"
+                    "size-[106px] rounded-full bg-yellow-400 -ml-4 z-[1] text-[#0A6597] text-4xl cursor-pointer hover:opacity-75"
                   }
                   buttonTwoPath="/services"
                 />
@@ -144,7 +151,7 @@ export default function Home() {
         </Suspense>
       </div>
       {/* Testimonials */}
-      <div className="flex mt-56 mb-28 overflow-x-clip">
+      <div className="flex mt-56 mb-28 overflow-x-clip testimonials">
         <div className="flex w-fit gap-5 ">
           <Suspense fallback={<Loading />}>
             <div className="w-[600px] pl-[7.5%] pr-[5%]">
@@ -187,6 +194,177 @@ export default function Home() {
           </Suspense>
         </div>
       </div>
+      {/* Our Works  */}
+      <div className="px-[5%] mt-40 mb-12 flex flex-col relative overflow-x-clip">
+        <Suspense fallback={<Loading />}>
+          <div className="w-full  bg-[#202020] flex flex-col rounded-3xl  p-[5%] z-10 gap-24 border-white border-[2px] border-opacity-10">
+            <div className="flex justify-between items-start font-inter">
+              <h2 className="text-[96px] font-bold leading-[110px]">
+                Our <br />
+                Works.
+              </h2>
+              <div className="flex self-end items-center justify-between group w-[60%] h-full">
+                <div className="w-[72%] text-white text-opacity-80 text-[19px] font-medium font-inter leading-[30px] group-hover:opacity-85 hover:opacity-95">
+                  Lorem ipsum dolor sit amet consectetur. A ut risus habitant
+                  morbi tellus massa. Viverra ornare tortor dictum integer
+                  elementum laoreet proin amet. Quis nisl pellentesque egestas
+                  vel nibh vulputate.
+                </div>
+                <Link
+                  href="/portfolio"
+                  className="bg-[#0093FF] size-[110px] rounded-full border-2 hover:opacity-85 break-words flex items-center justify-center text-white text-opacity-80 border-[#0095fff1] text-[19px] font-medium p-9 leading-[1.6]"
+                >
+                  See More
+                </Link>
+              </div>
+            </div>
+            <div className=" h-[624px] bg-[#2E2E2E] rounded-[32px] border-2 border-white border-opacity-10">
+              {worksData.data.map((works, index) => (
+                <PortfolioCard
+                  key={`PortfolioCard_${uuidv4()}_${index}`}
+                  mainClass={worksData.mainClass}
+                  works={works}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </Suspense>
+      </div>
+      {/* Why Us?  */}
+      <div className="px-[5%] flex flex-col relative overflow-x-clip">
+        <Suspense fallback={<Loading />}>
+          <div className="w-full  bg-[#202020] flex flex-col rounded-3xl  p-[5%] z-10 gap-24 border-white border-[2px] border-opacity-10">
+            <div className="flex justify-between items-start font-inter">
+              <h2 className="text-[90px] font-bold leading-[110px] w-[60%]">
+                Why you should choose us
+              </h2>
+              <div className="flex items-center justify-end ">
+                <TwinButton
+                  key={`YesUsTB_${uuidv4()}`}
+                  button={false}
+                  buttonOneClass={
+                    "size-[120px] bg-[#2B2D5A] rounded-full flex items-center justify-center hover:opacity-85 relative group"
+                  }
+                  buttonOneBody={yesUsData.headingIcon.first}
+                  buttonTwo={true}
+                  buttonTwoClass={
+                    "size-[120px] rounded-full bg-[#0094FF] -ml-4 z-[1] hover:opacity-85 group "
+                  }
+                  buttonTwoPath="0"
+                  buttonTwoBody={yesUsData.headingIcon.second}
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 grid-rows-2 relative gap-5 ">
+              <div className="h-[1146px] p-[4%] bg-gradient-to-b flex flex-col items-center justify-between from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
+                <div className="p-[5%] font-inter w-full flex flex-col gap-7">
+                  <div className="size-[80px] bg-[#0093FF] text-[#0093FF] text-4xl bg-opacity-20 flex items-center justify-center rounded-full hover:opacity-85">
+                    <h3 className=" font-bold font-inter">01</h3>
+                  </div>
+                  <BasicWriteup
+                    key={`YesUsHeadindBW_${uuidv4()}`}
+                    heading={false}
+                    headingClass={
+                      "text-white text-5xl font-bold leading-[70px] mb-0"
+                    }
+                    headingText="Creativity at the Core:"
+                    desc={true}
+                    descClass={
+                      "text-xl font-medium leading-[42.50px] text-white text-opacity-80"
+                    }
+                    descText=<>
+                      <div className="flex flex-col gap-6">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur. Auctor mi
+                          feugiat et placerat volutpat dictumst. At aliquam
+                          viverra turpis sollicitudin orci odio massa facilisi
+                          quam.
+                        </p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur. Auctor mi
+                          feugiat et placerat volutpat dictumst.
+                        </p>
+                      </div>
+                    </>
+                    buttonOne={false}
+                    buttonTwo={false}
+                  />
+                </div>
+                <div className="p-[3%] #best_style w-full h-[40%]">
+                  <div className=" h-[240px] py-[3%] flex items-center justify-center bg-opacity-40 bg-gradient-to-b from-stone-900 to-neutral-700 rounded-[32px] border-2 border-sky-500 border-opacity-30">
+                    <div className="size-[90%] py-[3%] flex items-center justify-center bg-opacity-40  bg-gradient-to-b from-stone-900 to-neutral-700 rounded-[32px] border-2 border-sky-500 border-opacity-30">
+                      <div className="size-[90%] p-[10%]  flex items-center justify-center bg-opacity-40  bg-gradient-to-b from-stone-900 to-neutral-700 rounded-[32px] border-2 border-sky-500 border-opacity-30 relative">
+                        {/* content  */}
+                        <div className="absolute flex flex-col gap-10 items-center w-[450px] backdrop-blur-[2px] overflow-y-hidden clip_box">
+                          <div className="w-[370px] p-1.5 flex items-center justify-center h-[109px] bg-gradient-to-b from-[#0b1120] from-[70%] to-[#0094FF] rounded-3xl shadow-[0_0_18px_10px]  shadow-[#0095ff68] border-2 border-opacity-45 border-[#0095ffd8]">
+                            <div className=" bg-[#1c3446] bg-opacity-45 w-full h-full backdrop-blur-2xl flex flex-col items-center rounded-3xl shadow-lg shadow-[#0094FF]">
+                              <h4 className="text-white text-[24px] font-medium font-inter mt-5">
+                                #We are the best
+                              </h4>
+                              <div className="flex gap-3 items-center justify-center">
+                                <div className="size-2 rounded-full bg-white bg-opacity-70"></div>
+                                <p className="text-white text-opacity-60 text-base font-medium font-inter">
+                                  Over 300 customers satisfied
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="w-[375px] h-[109px] flex relative justify-center  bg-gradient-to-b from-zinc-950 to-neutral-700 rounded-[32px] border-2 border-blue-500 opacity-85 backdrop-blur-md border-opacity-30 border-t-0">
+                            <div className="flex items-end justify-center absolute h-1/2 w-[374px] bg-[#282828] backdrop-blur-[1px] border-t-2 border-x-2 rounded-t-[32px] border-t-white border-x-white border-opacity-5 "></div>
+                            <h4 className="text-white text-[24px] font-medium font-inter text-opacity-40 mt-5 z-10 self-center">
+                              #We are the best
+                            </h4>
+                          </div>
+
+                          <div className="w-[370px] p-1.5 flex items-center justify-center h-[109px] bg-gradient-to-b from-[#0b1120] from-[70%] to-[#0094FF] rounded-3xl shadow-[0_0_28px_24px] z-10 shadow-[#0095ff68] border-2 border-opacity-45 border-[#0095ffd8]">
+                            <div className=" bg-[#1c3446] bg-opacity-45 w-full h-full backdrop-blur-2xl flex flex-col items-center rounded-3xl shadow-lg shadow-[#0094FF]">
+                              <h4 className="text-white text-[24px] font-medium font-inter mt-5">
+                                #We are the best
+                              </h4>
+                              <div className="flex gap-3 items-center justify-center">
+                                <div className="size-2 rounded-full bg-white bg-opacity-70"></div>
+                                <p className="text-white text-opacity-60 text-base font-medium font-inter">
+                                  Over 300 customers satisfied
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="w-[375px] h-[109px] flex relative justify-center  bg-gradient-to-t from-zinc-950 to-neutral-700 rounded-[32px] border-2 border-blue-500 opacity-85 backdrop-blur-md border-opacity-40 border-b-0">
+                            <h4 className="text-white text-[24px] font-medium font-inter text-opacity-40 mt-5 z-10 self-center">
+                              #We are the best
+                            </h4>
+                            <div className="flex items-end justify-center absolute h-1/2  bottom-0 w-[375px] bg-[#28272ae6] backdrop-blur-[1px] border-b-2 border-x-2 rounded-b-[32px] border-b-white border-x-white border-opacity-5 "></div>
+                          </div>
+                          <div className="w-[370px] p-1.5 flex items-center justify-center h-[109px] bg-gradient-to-b from-[#0b1120] from-[70%] to-[#0094FF] rounded-3xl shadow-[0_0_18px_10px] shadow-[#0095ff68] border-2 border-opacity-45 border-[#0095ffd8]">
+                            <div className=" bg-[#1c3446] bg-opacity-45 w-full h-full backdrop-blur-2xl flex flex-col items-center rounded-3xl shadow-lg shadow-[#0094FF]">
+                              <h4 className="text-white text-[24px] font-medium font-inter mt-5">
+                                #We are the best
+                              </h4>
+                              <div className="flex gap-3 items-center justify-center">
+                                <div className="size-2 rounded-full bg-white bg-opacity-70"></div>
+                                <p className="text-white text-opacity-60 text-base font-medium font-inter">
+                                  Over 300 customers satisfied
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className=" h-[1146px] flex flex-col gap-10 bg-gradient-to-b from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
+                {" "}
+              </div>
+              <div className="col-span-2 row-start-2 h-[570px] bg-gradient-to-b from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
+                {" "}
+              </div>
+            </div>
+          </div>
+        </Suspense>
+      </div>
       {/* 
       <Suspense fallback={<p>Loading Links</p>}>
         <div className="absolute py-6 px-4 bg-black text-white z-30 right-0 top-1/3 flex flex-col gap-7 text-xl">
@@ -201,7 +379,14 @@ export default function Home() {
           </Link>
         </div>
       </Suspense> */}
-      <script src="/app .js"></script>
+      {/* <Script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        onLoad={() => {
+          console.log("ready");
+        }}
+      ></Script> */}
+      <Script id="jqueryMin" src="/js/jquery-3.7.1.min.js" />
+      <Script id="externalScript" src="/js/index.js" />
     </main>
   );
 }
