@@ -77,12 +77,25 @@ section {
   clip-path: inset(0 13px 0 0);
   /* scale: 101%; */
   align-self: right;
-  
+
 }
 
 .clip_box {
   clip-path: inset(135px 0 135px 0);
 
+}
+
+.change-w-design {
+  background: linear-gradient(180deg, #20C9F6 0%, #15B6F9 35.42%, rgba(0, 147, 255, 0.00) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  
+}
+
+.styled-shadow {
+  box-shadow: -5px -5px 15px -3px #4e4d4d88, 5px 10px 15px -3px #00000088;
 }
 
 @keyframes animateBlend {

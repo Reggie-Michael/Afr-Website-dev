@@ -256,7 +256,8 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 grid-rows-2 relative gap-5 ">
+            <div className="grid grid-cols-2 relative gap-4">
+              {/* First  */}
               <div className="h-[1146px] p-[4%] bg-gradient-to-b flex flex-col items-center justify-between from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
                 <div className="p-[5%] font-inter w-full flex flex-col gap-7">
                   <div className="size-[80px] bg-[#0093FF] text-[#0093FF] text-4xl bg-opacity-20 flex items-center justify-center rounded-full hover:opacity-85">
@@ -273,6 +274,7 @@ export default function Home() {
                     descClass={
                       "text-xl font-medium leading-[42.50px] text-white text-opacity-80"
                     }
+                    descWrap={true}
                     descText=<>
                       <div className="flex flex-col gap-6">
                         <p>
@@ -291,75 +293,197 @@ export default function Home() {
                     buttonTwo={false}
                   />
                 </div>
-                <div className="p-[3%] #best_style w-full h-[40%]">
-                  <div className=" h-[240px] py-[3%] flex items-center justify-center bg-opacity-40 bg-gradient-to-b from-stone-900 to-neutral-700 rounded-[32px] border-2 border-sky-500 border-opacity-30">
-                    <div className="size-[90%] py-[3%] flex items-center justify-center bg-opacity-40  bg-gradient-to-b from-stone-900 to-neutral-700 rounded-[32px] border-2 border-sky-500 border-opacity-30">
-                      <div className="size-[90%] p-[10%]  flex items-center justify-center bg-opacity-40  bg-gradient-to-b from-stone-900 to-neutral-700 rounded-[32px] border-2 border-sky-500 border-opacity-30 relative">
-                        {/* content  */}
-                        <div className="absolute flex flex-col gap-10 items-center w-[450px] backdrop-blur-[2px] overflow-y-hidden clip_box">
-                          <div className="w-[370px] p-1.5 flex items-center justify-center h-[109px] bg-gradient-to-b from-[#0b1120] from-[70%] to-[#0094FF] rounded-3xl shadow-[0_0_18px_10px]  shadow-[#0095ff68] border-2 border-opacity-45 border-[#0095ffd8]">
-                            <div className=" bg-[#1c3446] bg-opacity-45 w-full h-full backdrop-blur-2xl flex flex-col items-center rounded-3xl shadow-lg shadow-[#0094FF]">
-                              <h4 className="text-white text-[24px] font-medium font-inter mt-5">
-                                #We are the best
-                              </h4>
-                              <div className="flex gap-3 items-center justify-center">
-                                <div className="size-2 rounded-full bg-white bg-opacity-70"></div>
-                                <p className="text-white text-opacity-60 text-base font-medium font-inter">
-                                  Over 300 customers satisfied
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="w-[375px] h-[109px] flex relative justify-center  bg-gradient-to-b from-zinc-950 to-neutral-700 rounded-[32px] border-2 border-blue-500 opacity-85 backdrop-blur-md border-opacity-30 border-t-0">
-                            <div className="flex items-end justify-center absolute h-1/2 w-[374px] bg-[#282828] backdrop-blur-[1px] border-t-2 border-x-2 rounded-t-[32px] border-t-white border-x-white border-opacity-5 "></div>
-                            <h4 className="text-white text-[24px] font-medium font-inter text-opacity-40 mt-5 z-10 self-center">
-                              #We are the best
-                            </h4>
-                          </div>
-
-                          <div className="w-[370px] p-1.5 flex items-center justify-center h-[109px] bg-gradient-to-b from-[#0b1120] from-[70%] to-[#0094FF] rounded-3xl shadow-[0_0_28px_24px] z-10 shadow-[#0095ff68] border-2 border-opacity-45 border-[#0095ffd8]">
-                            <div className=" bg-[#1c3446] bg-opacity-45 w-full h-full backdrop-blur-2xl flex flex-col items-center rounded-3xl shadow-lg shadow-[#0094FF]">
-                              <h4 className="text-white text-[24px] font-medium font-inter mt-5">
-                                #We are the best
-                              </h4>
-                              <div className="flex gap-3 items-center justify-center">
-                                <div className="size-2 rounded-full bg-white bg-opacity-70"></div>
-                                <p className="text-white text-opacity-60 text-base font-medium font-inter">
-                                  Over 300 customers satisfied
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="w-[375px] h-[109px] flex relative justify-center  bg-gradient-to-t from-zinc-950 to-neutral-700 rounded-[32px] border-2 border-blue-500 opacity-85 backdrop-blur-md border-opacity-40 border-b-0">
-                            <h4 className="text-white text-[24px] font-medium font-inter text-opacity-40 mt-5 z-10 self-center">
-                              #We are the best
-                            </h4>
-                            <div className="flex items-end justify-center absolute h-1/2  bottom-0 w-[375px] bg-[#28272ae6] backdrop-blur-[1px] border-b-2 border-x-2 rounded-b-[32px] border-b-white border-x-white border-opacity-5 "></div>
-                          </div>
-                          <div className="w-[370px] p-1.5 flex items-center justify-center h-[109px] bg-gradient-to-b from-[#0b1120] from-[70%] to-[#0094FF] rounded-3xl shadow-[0_0_18px_10px] shadow-[#0095ff68] border-2 border-opacity-45 border-[#0095ffd8]">
-                            <div className=" bg-[#1c3446] bg-opacity-45 w-full h-full backdrop-blur-2xl flex flex-col items-center rounded-3xl shadow-lg shadow-[#0094FF]">
-                              <h4 className="text-white text-[24px] font-medium font-inter mt-5">
-                                #We are the best
-                              </h4>
-                              <div className="flex gap-3 items-center justify-center">
-                                <div className="size-2 rounded-full bg-white bg-opacity-70"></div>
-                                <p className="text-white text-opacity-60 text-base font-medium font-inter">
-                                  Over 300 customers satisfied
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                <div className="p-[3%] relative w-full flex items-center justify-center h-[44%]">
+                  <div className=" h-[260px] w-full opacity-60 absolute bg-gradient-to-b from-[#1E1E1E] from-[0%] to-[#3C3C3C] to-[100%] rounded-[32px] border-2 border-[#0094FF] border-opacity-40"></div>
+                  <div className=" h-[220px] w-[90%] opacity-60 absolute bg-gradient-to-b from-[#1E1E1E] from-[0%] to-[#3C3C3C] to-[100%] rounded-[32px] border-2 border-[#0094FF] border-opacity-40"></div>
+                  <div className=" h-[180px] w-[80%] opacity-80 absolute bg-gradient-to-b from-[#1E1E1E] from-[0%] to-[#3C3C3C] to-[100%] rounded-[32px] border-2 border-[#0094FF] border-opacity-40"></div>
+                  <div className="h-[150px] w-[70%] blur-xl opacity-60 absolute bg-[#0094FF] mix-blend-screen "></div>
+                  <div className="flex flex-col gap-5 z-10  items-center justify-center w-[78%]">
+                    <div className="h-[130px] w-[90%] relative opacity-80 text-opacity-20 flex flex-col items-center justify-center rounded-[32px] border-2 border-[#0095ff6e] border-t-[#45454598] bg-gradient-to-t from-[#070707] from-[0%] to-[#3C3C3C] to-[100%] border-opacity-25 ">
+                    <div className="flex items-end justify-center absolute h-1/2 -top-1 w-[102%] bg-[#28272aec] backdrop-blur-[1px]  border-x-2 rounded-t-[36px] border-x-white border-opacity-5 "></div>
+                      
+                      <h4 className="text-white text-[28px] font-medium leading-[129.688%] z-10 opacity-45">
+                        #We are the best
+                      </h4>
+                    </div>
+                    <div
+                      className="h-[130px] w-full flex flex-col gap-1 justify-center items-center font-inter rounded-[32px] border-2 border-[#0094FF] bg-gradient-to-b from-[#212121] from-[0%] to-[#0094FF] to-[228.9%]"
+                      style={{
+                        boxShadow:
+                          "0px 0px 1.3px 10px rgba(0, 23, 39, 0.28) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                      }}
+                    >
+                      <h4 className="text-white text-[28px] font-medium leading-[129.688%] ">
+                        #We are the best
+                      </h4>
+                      <div className="flex gap-3 items-center justify-center">
+                        <div className="size-2 rounded-full bg-white bg-opacity-70"></div>
+                        <p className="text-white text-opacity-60 text-base font-medium font-inter">
+                          Over 300 customers satisfied
+                        </p>
                       </div>
+                    </div>
+                    <div className="h-[130px] w-[90%] relative opacity-80 text-opacity-20 flex flex-col items-center justify-center rounded-[32px] border-2 border-[#0095ff6e] border-b-[#3C3C3C] bg-gradient-to-t from-[#070707] from-[0%] to-[#3C3C3C] to-[100%] border-opacity-25 border-t-opacity-40 ">
+                      <h4 className="text-white text-[28px] font-medium leading-[129.688%] z-10 opacity-45">
+                        #We are the best
+                      </h4>
+                      <div className="flex items-end justify-center absolute h-1/2 -bottom-1 w-[102%] bg-[#28272ae6] backdrop-blur-[1px]  border-x-2 rounded-b-[36px]  border-x-white border-opacity-5 "></div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className=" h-[1146px] flex flex-col gap-10 bg-gradient-to-b from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
-                {" "}
+              {/* Second  */}
+              <div className=" h-[1146px] flex flex-col gap-10 ">
+                <div className="w-full h-[80%] bg-[#2F2F2F] flex flex-col gap-2 rounded-[32px] border-2 border-white border-opacity-10">
+                  <div className=" h-2/5 flex flex-col gap-5 items-center justify-center bg-[#303234]  rounded-[32px] border-b-2 border-white border-opacity-10">
+                    <div className="w-4/5 flex p-4 justify-between rounded-2xl items-center styled-shadow">
+                      <div className="size-6 bg-[#303234] rounded-full shadow-[#434343] border-opacity-15 border-2 border-[#747474] shadow-lg "></div>
+                      <div className="size-6 bg-[#303234] rounded-full shadow-[#434343] border-opacity-15 border-2 border-[#747474] shadow-xl  flex items-center justify-center">
+                        <Image
+                          src="/assets/images/Union.svg"
+                          alt="angle right"
+                          width={10}
+                          height={10}
+                        />
+                      </div>
+                    </div>
+                    <div className="w-4/5 flex p-4 justify-between rounded-2xl items-center styled-shadow">
+                      <div className="size-6 bg-[#303234] rounded-full shadow-[#434343] border-opacity-15 border-2 border-[#747474] shadow-lg "></div>
+                      <div className="size-6 bg-[#303234] rounded-full shadow-[#434343] border-opacity-15 border-2 border-[#747474] shadow-xl  flex items-center justify-center">
+                        <Image
+                          src="/assets/images/Union.svg"
+                          alt="angle right"
+                          width={10}
+                          height={10}
+                        />
+                      </div>
+                    </div>
+                    <div className="w-4/5 flex p-4 justify-between rounded-2xl items-center styled-shadow">
+                      <div className="size-6 bg-[#303234] rounded-full shadow-[#434343] border-opacity-15 border-2 border-[#747474] shadow-lg "></div>
+                      <div className="size-6 bg-[#303234] rounded-full shadow-[#434343] border-opacity-15 border-2 border-[#747474] shadow-xl  flex items-center justify-center">
+                        <Image
+                          src="/assets/images/Union.svg"
+                          alt="angle right"
+                          width={10}
+                          height={10}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-[7.5%] font-inter w-full flex flex-col gap-7">
+                    <div className="size-[80px] bg-[#0093FF] text-[#0093FF] text-4xl bg-opacity-20 flex items-center justify-center rounded-full hover:opacity-85">
+                      <h3 className=" font-bold font-inter">02</h3>
+                    </div>
+                    <BasicWriteup
+                      key={`YesUsHeadindBW2_${uuidv4()}`}
+                      heading={false}
+                      headingClass={
+                        "text-white text-5xl font-bold leading-[60px] mb-0"
+                      }
+                      headingText="Creativity at the Core:"
+                      desc={true}
+                      descClass={
+                        "text-xl font-medium leading-[42.50px] text-white text-opacity-80"
+                      }
+                      descWrap={true}
+                      descText=<>
+                        <div className="flex flex-col gap-6">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur. Auctor mi
+                            feugiat et placerat volutpat dictumst. At aliquam
+                            viverra turpis sollicitudin orci odio massa.
+                          </p>
+                        </div>
+                      </>
+                      buttonOne={false}
+                      buttonTwo={false}
+                    />
+                  </div>
+                </div>
+                <div className=" h-[311px] p-[2%] flex flex-col relative items-center gap-4 justify-center bg-gradient-to-l from-[#214363] from-[-29.61%] to-[#0F213A] to-[51.66%] rounded-[32px] border-2 border-sky-700">
+                  <p className="text-white text-lg font-medium font-inter leading-tight w-4/5">
+                    We are here to
+                  </p>
+                  <h3 className="text-white text-[76px] font-normal font-inter leading-[97%] -tracking-[2px]">
+                    Create change <br />
+                    <span className="change-w-design font-bold">
+                      with design.
+                    </span>
+                  </h3>
+                  <div className="absolute flex top-[55px] -right-[50px]">
+                    <Image
+                      src="/assets/images/Screw-Clip.svg"
+                      alt="Clip With screw icon"
+                      width={260}
+                      height={230}
+                      className=""
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="col-span-2 row-start-2 h-[570px] bg-gradient-to-b from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
-                {" "}
+              {/* Third  */}
+              <div className="col-span-2 relative px-[5%] flex gap-14 row-start-2 h-[570px] bg-gradient-to-b from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
+              <div className="absolute flex items-center justify-center -left-[200px] -top-[190px] z-30">
+                    <Image
+                      src="/assets/images/bonut.svg"
+                      alt="Ribbon? icon"
+                      height={380}
+                      width={380}
+                    />
+                  </div>
+                <div className="h-full font-inter w-1/2 flex flex-col gap-7">
+                
+                  <div className="size-[80px] mt-[10%] bg-[#0093FF] text-[#0093FF] text-4xl bg-opacity-20 flex items-center justify-center rounded-full hover:opacity-85">
+                    <h3 className="font-bold font-inter">03</h3>
+                  </div>
+                  <BasicWriteup
+                    key={`YesUsHeadindBW_${uuidv4()}`}
+                    heading={false}
+                    headingClass={
+                      "text-white text-5xl font-bold leading-[70px] mb-0"
+                    }
+                    headingText="Creativity at the Core:"
+                    desc={true}
+                    descClass={
+                      "text-xl font-medium leading-[42.50px] text-white text-opacity-80"
+                    }
+                    descWrap={true}
+                    descText=<>
+                      <div className="flex flex-col gap-6">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur. Auctor mi
+                          feugiat et placerat volutpat dictumst. At aliquam
+                          viverra turpis sollicitudin orci odio massa.Lorem
+                          ipsum dolor sit amet consectetur. Auctor mi feugiat et
+                          placerat volutpat dictumst.
+                        </p>
+                      </div>
+                    </>
+                    buttonOne={false}
+                    buttonTwo={false}
+                  />
+                </div>
+                <div className="relative h-full w-1/2 flex items-center justify-center overflow-y-clip">
+                  <div className="size-[600px] opacity-40 absolute bg-gradient-to-b from-stone-900 to-neutral-700 rounded-full border-2 border-sky-500 border-opacity-60"></div>
+                  <div className="size-[520px] opacity-40 absolute bg-gradient-to-b from-stone-900 to-neutral-700 rounded-full border-2 border-sky-500 border-opacity-60"></div>
+                  <div className="size-[420px] opacity-40 absolute bg-gradient-to-b from-stone-900 to-neutral-700 rounded-full border-2 border-sky-500 border-opacity-60"></div>
+                  <div className="size-[330px] blur-2xl opacity-60 absolute bg-[#0094FF] rounded-full mix-blend-screen "></div>
+                  <div
+                    className="size-[320px]  z-10 flex flex-col gap-7 justify-center items-center font-inter rounded-full border-2 border-[#0094FF] bg-gradient-to-b from-[#1E1E1E] from-[35.67%] to-[#0094FF] to-[161.15%]"
+                    style={{
+                      boxShadow:
+                        "0px 4px 19.4px 9px rgba(0, 0, 0, 0.15), 0px 0px 1.3px 10px rgba(0, 23, 39, 0.28) inset",
+                    }}
+                  >
+                    <h3 className="text-white text-7xl font-bold leading-[41.50px]">
+                      #36
+                    </h3>
+                    <div className="text-center text-white text-xl font-medium leading-[25px]">
+                      Satisfied <br />
+                      Customers
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
