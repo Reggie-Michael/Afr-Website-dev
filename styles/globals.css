@@ -46,10 +46,46 @@ section {
   @apply bg-cyan-400;
 }
 
-
 /* --Services  */
 .services .main-wrap .link-active {
   @apply bg-emerald-500
+}
+
+/* --Portfolio  */
+.portfolio .main-wrap .link-active {
+  @apply bg-yellow-400
+}
+
+
+/*** Footer Image Position  ***/
+
+/* --Home--  */
+.home footer .footer_image_1 {
+  @apply bottom-[18%] -left-[5%];
+}
+
+.home footer .footer_image_2 {
+  @apply -bottom-[200px] -right-[1%];
+}
+
+/* --About-- */
+.about footer .footer_image_1 {
+  /* @apply bg-cyan-400; */
+}
+
+.about footer .footer_image_2 {
+  @apply right-[1%]  -bottom-4;
+}
+
+
+/* --Services  */
+.services footer .footer_image_1 {
+  @apply bottom-[300px] ;
+
+}
+
+.services footer .footer_image_2{
+  @apply -bottom-[120px] -right-[2%];
 }
 
 

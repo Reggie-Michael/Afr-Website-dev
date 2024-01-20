@@ -25,10 +25,11 @@ import BasicWriteup from "@components/BasicWriteup";
 import TestimonialCardMini from "@components/TestimonialCardMini";
 import { v4 as uuidv4 } from "uuid";
 import Script from "next/script";
+import { FooterImage1, FooterImage2 } from "@components/FooterImage";
 
 export default function Home() {
   return (
-    <main className="app relative">
+    <main className="app">
       {/* Landing Page  */}
       <div className="landing-page flex flex-col box-border">
         <div className="fv h-[710px]">
@@ -490,25 +491,15 @@ export default function Home() {
         </Suspense>
       </div>
       {/* 
-      <Suspense fallback={<p>Loading Links</p>}>
-        <div className="absolute py-6 px-4 bg-black text-white z-30 right-0 top-1/3 flex flex-col gap-7 text-xl">
-          <Link href="/" title="Facebook Page" className="hover:opacity-80">
-            <FontAwesomeIcon icon={faFacebook}/>
-          </Link>
-          <Link href="/" title="X -- formerly Twitter" className="hover:opacity-80">
-            <FontAwesomeIcon icon={faXTwitter} />
-          </Link>
-          <Link href="/" title="Instagram Page" className="hover:opacity-80">
-            <FontAwesomeIcon icon={faInstagram}/>
-          </Link>
-        </div>
-      </Suspense> */}
+     
       {/* <Script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         onLoad={() => {
           console.log("ready");
         }}
       ></Script> */}
+      {/* <FooterImage1 className="absolute bottom-[200px] -left-[5%] z-30" />
+      <FooterImage2 className="absolute -bottom-[200px] -right-[1%] z-30" /> */}
       <Script id="jqueryMin" src="/js/jquery-3.7.1.min.js" />
       <Script id="externalScript" src="/js/index.js" />
     </main>
