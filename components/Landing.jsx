@@ -1,6 +1,3 @@
-import React from "react";
-import Navbar from "./Navbar";
-
 const Landing = ({contentClass, paneOne, paneTwo, paneTwoContent }) => {
   return (
     <div className={`landingContent ${contentClass} `}>

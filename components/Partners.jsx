@@ -42,7 +42,7 @@ const Partners = () => {
       {partnersData.map((item) => (
 
         <div className="partner-image-container" key={`${item.alt} ${uuidv4()}`}>
-          <PartnerImage {...item} className={"size-[80%]"} />
+          <PartnerImage {...item} className={"size-[85%]"} />
         </div>
       ))}
     </div>

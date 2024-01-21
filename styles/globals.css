@@ -194,3 +194,17 @@ section {
   background-blend-mode: multiply;
   background-size: 97%;
 }
+
+/*** About  ***/
+
+.about_landing {
+  background: url("/assets/images/Gradient Background 2.png") no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.border_landing {
+ border-image: url("/assets/images/AboutLanding BorderImage.png");
+ border-image-slice: 40;
+ border-image-width: 30px;
+}

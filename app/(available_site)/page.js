@@ -54,7 +54,7 @@ export default function Home() {
         </div>
       </div>
       {/* Our Partners  */}
-      <div className="partners w-full flex flex-col gap-12 my-24 items-center px-[5%]">
+      <div className="partners w-full flex flex-col gap-14 my-28 items-center px-[5%]">
         <Suspense fallback={<Loading />}>
           <p className="text-center text-white text-opacity-80 text-xl font-medium font-montserrat leading-[34px] w-[30%]">
             Some of the companies that have trusted our working capabilities.
@@ -63,15 +63,15 @@ export default function Home() {
         </Suspense>
       </div>
       {/* Inputted Text  */}
-      <div className="flex gap-7 font-inter px-[5%] my-36">
+      <div className="flex gap-7 font-inter px-[5%] my-44">
         <Suspense fallback={<Loading />}>
-          <div className="w-3/5  text-[40px] font-bold leading-[50px]">
+          <div className="w-3/5  text-[54px] font-bold leading-[64px]">
             Lorem ipsum dolor sit amet consectetur. Amet tincidunt ut aliquam
             commodo in arcu enim. Sem metus auctor ultrices risus consectetur
             mauris.
           </div>
           <div className="flex flex-col w-2/5 gap-14">
-            <div className="h-[311px]text-opacity-80 text-lg font-medium leading-7">
+            <div className=" text-opacity-80 text-white text-xl font-medium leading-8">
               Lorem ipsum dolor sit amet consectetur. A ut risus habitant morbi
               tellus massa. Viverra ornare tortor dictum integer elementum
               laoreet proin amet. Quis nisl pellentesque egestas vel nibh
@@ -97,7 +97,7 @@ export default function Home() {
         </Suspense>
       </div>
       {/* Our Services  */}
-      <div className="px-[5%] my-28 flex flex-col relative overflow-x-clip">
+      <div className="px-[5%] my-36 flex flex-col relative overflow-x-clip">
         <Suspense fallback={<Loading />}>
           {/* Styling  */}
           <div className="w-full flex -mb-2 bg-transparent ">
@@ -301,8 +301,8 @@ export default function Home() {
                   <div className="h-[150px] w-[70%] blur-xl opacity-60 absolute bg-[#0094FF] mix-blend-screen "></div>
                   <div className="flex flex-col gap-5 z-10  items-center justify-center w-[78%]">
                     <div className="h-[130px] w-[90%] relative opacity-80 text-opacity-20 flex flex-col items-center justify-center rounded-[32px] border-2 border-[#0095ff6e] border-t-[#45454598] bg-gradient-to-t from-[#070707] from-[0%] to-[#3C3C3C] to-[100%] border-opacity-25 ">
-                    <div className="flex items-end justify-center absolute h-1/2 -top-1 w-[102%] bg-[#28272aec] backdrop-blur-[1px]  border-x-2 rounded-t-[36px] border-x-white border-opacity-5 "></div>
-                      
+                      <div className="flex items-end justify-center absolute h-1/2 -top-1 w-[102%] bg-[#28272aec] backdrop-blur-[1px]  border-x-2 rounded-t-[36px] border-x-white border-opacity-5 "></div>
+
                       <h4 className="text-white text-[28px] font-medium leading-[129.688%] z-10 opacity-45">
                         #We are the best
                       </h4>
@@ -424,16 +424,15 @@ export default function Home() {
               </div>
               {/* Third  */}
               <div className="col-span-2 relative px-[5%] flex gap-14 row-start-2 h-[570px] bg-gradient-to-b from-zinc-800 to-zinc-800 rounded-[32px] border-2 border-white border-opacity-10">
-              <div className="absolute flex items-center justify-center -left-[200px] -top-[190px] z-30">
-                    <Image
-                      src="/assets/images/bonut.svg"
-                      alt="Ribbon? icon"
-                      height={380}
-                      width={380}
-                    />
-                  </div>
+                <div className="absolute flex items-center justify-center -left-[200px] -top-[190px] z-30">
+                  <Image
+                    src="/assets/images/bonut.svg"
+                    alt="Ribbon? icon"
+                    height={380}
+                    width={380}
+                  />
+                </div>
                 <div className="h-full font-inter w-1/2 flex flex-col gap-7">
-                
                   <div className="size-[80px] mt-[10%] bg-[#0093FF] text-[#0093FF] text-4xl bg-opacity-20 flex items-center justify-center rounded-full hover:opacity-85">
                     <h3 className="font-bold font-inter">03</h3>
                   </div>
