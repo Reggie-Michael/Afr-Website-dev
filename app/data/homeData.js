@@ -197,7 +197,7 @@ export const landingDataSv = {
 };
 export const twinButtonIconData = {
   redirect: {
-    path: "Rocket",
+    path: "Rocket - Copy",
     alt: "rocket icon",
     width: 86,
     height: 86,
@@ -218,7 +218,7 @@ export const ourServicesData = [
       buttonOneClass:
         "size-[60px] bg-sky-500 rounded-full flex items-center justify-center group-hover:brightness-125 overflow-clip relative",
       buttonOneBody: {
-        path: "Rocket",
+        path: "Rocket - Copy",
         alt: "rocket icon",
         width: 53,
         height: 53,

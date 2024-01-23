@@ -26,6 +26,7 @@ import TestimonialCardMini from "@components/TestimonialCardMini";
 import { v4 as uuidv4 } from "uuid";
 import Script from "next/script";
 import { FooterImage1, FooterImage2 } from "@components/FooterImage";
+import Band from "@components/Band";
 
 export default function Home() {
   return (
@@ -488,6 +489,18 @@ export default function Home() {
             </div>
           </div>
         </Suspense>
+      </div>
+      {/* Exit Band  */}
+      <div className="h-[400px] my-6 flex flex-col justify-center items-center relative overflow-x-clip">
+        <Band
+          repeatTimes={6}
+          writeUpData={{text: {data: " ", class: " "}, image: { width: 0, height: 0, src: "", alt: " " } }}
+          className="w-[120dvw] gap-20 h-[125px] absolute left-0  bg-[#094174] text-center text-white text-[36px] font-semibold font-montserrat leading-[102px] uppercase -rotate-3"
+        />
+        <Band
+          repeatTimes={6}
+          className="w-fit gap-20 h-[125px] absolute -left-[45%] bg-[#0094FF] text-center text-white text-[36px] font-semibold font-montserrat leading-[102px] uppercase"
+        />
       </div>
       {/* 
      

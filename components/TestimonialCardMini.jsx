@@ -108,9 +108,9 @@ const TestimonialCardMini = ({ rating, text, name, date, img }) => {
           <h4 className="text-slate-50 text-base font-semibold font-public-sans m-0">
             {name || "Ralph Edwards"}
           </h4>
-          <div className="text-slate-400 text-sm font-normal font-public-sans leading-tight">
+          <p className="text-slate-400 text-sm font-normal font-public-sans leading-tight">
             {date || "April 22, 2022"}
-          </div>
+          </p>
         </div>
         <div className="flex gap-2 pt-1">
           <div className="flex items-start ">
